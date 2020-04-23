@@ -1,0 +1,458 @@
+<html lang="ru">
+  <head class="push_notifier_supported">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="/images/icons/favicons/fav_logo.ico?6" />
+
+    <link rel="apple-touch-icon" href="/images/icons/pwa/apple/default.png?8" />
+
+    <meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+    <meta
+      name="description"
+      content="ВКонтакте – универсальное средство для общения и поиска друзей и одноклассников, которым ежедневно пользуются десятки миллионов человек. Мы хотим, чтобы друзья, однокурсники, одноклассники, соседи и коллеги всегда оставались в контакте."
+    />
+
+    <title>Вход | ВКонтакте</title>
+    <link rel="stylesheet" type="text/css" href="./css/al/base.css" />
+  </head>
+
+  <body
+    onresize="onBodyResize()"
+    class="login_page no_stl no_sett"
+    data-useragent="chrome"
+  >
+    <div id="system_msg" class="fixed"></div>
+    <div id="utils"></div>
+
+    <div id="layer_bg" class="fixed" style="height: 639px;"></div>
+    <div
+      id="layer_wrap"
+      class="scroll_fix_wrap fixed layer_wrap"
+      style="width: 981px; height: 639px;"
+    >
+      <div id="layer" style="width: 963px;"></div>
+    </div>
+    <div id="box_layer_bg" class="fixed" style="height: 639px;"></div>
+    <div
+      id="box_layer_wrap"
+      class="scroll_fix_wrap fixed"
+      style="width: 981px; height: 639px;"
+    >
+      <div id="box_layer" style="width: 963px;">
+        <div id="box_loader">
+          <div class="pr pr_baw pr_medium" id="box_loader_pr">
+            <div class="pr_bt"></div>
+            <div class="pr_bt"></div>
+            <div class="pr_bt"></div>
+          </div>
+          <div class="back"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="stl_left" style="width: 0px;">
+      <div id="stl_bg"><nobr id="stl_text">Наверх</nobr></div>
+    </div>
+    <div
+      id="stl_side"
+      style="left: 0px; width: 10px; top: 42px; height: 597px;"
+    ></div>
+
+    <script type="text/javascript">
+      window.domStarted && domStarted();
+    </script>
+
+    <div class="scroll_fix_wrap _page_wrap" id="page_wrap">
+      <div>
+        <div class="scroll_fix" style="width: 1280px;">
+          <div id="page_header_cont" class="page_header_cont">
+            <div class="back"></div>
+            <div
+              id="page_header_wrap"
+              class="page_header_wrap"
+              style="width: 1280px;"
+            >
+              <a
+                class="top_back_link"
+                href=""
+                id="top_back_link"
+                onclick="if (nav.go(this, event, {back: true}) === false) { showBackLink(); return false; }"
+                style="max-width: 1313px;"
+              ></a>
+              <div
+                id="page_header"
+                class="p_head p_head_l0"
+                style="width: 1280px"
+              >
+                <div class="content">
+                  <div id="top_nav" class="head_nav">
+                    <div class="head_nav_item fl_l">
+                      <a
+                        class="top_home_link fl_l CovidLogo"
+                        href="/"
+                        aria-label="На главную"
+                        accesskey="1"
+                        onmouseover="this.className.indexOf('bugtracker_logo') === -1 &amp;&amp; bodyNode.className.indexOf('WideScreenAppPage') === -1 &amp;&amp; showTooltip(this,
+{ text: '<div class=&quot;CovidTooltip__logo&quot;></div><div class=&quot;CovidTooltip__title&quot;>Оставайтесь дома</div><div class=&quot;CovidTooltip__text&quot;>Мойте руки, избегайте мест скопления людей и&nbsp;по&nbsp;возможности не&nbsp;выходите из&nbsp;дома. <a href=&quot;/@team-vs-coronavirus&quot; onclick=&quot;return typeof window.statlogsValueEvent !== \'undefined\' &amp;&amp; window.statlogsValueEvent(\'coronavirus_tooltip_click\', 1) || nav.go(this, event)&quot;>Главное&nbsp;о&nbsp;COVID-19</a></div>',
+  className: 'CovidTooltip',
+  width: 356,
+  dir: 'top',
+  shift: [0, 0, 6],
+  hidedt: 100, showdt: 200,
+  hasover: true,
+  onShowStart: function() {window.statlogsValueEvent !== 'undefined' &amp;&amp; window.statlogsValueEvent('coronavirus_tooltip_show', 1)}
+})"
+                        ><div class="top_home_logo"></div>
+                        <div class="CovidLogo__hashtag ">#лучшедома</div></a
+                      >
+                    </div>
+                    <div class="head_nav_item fl_l">
+                      <div
+                        id="ts_wrap"
+                        class="ts_wrap"
+                        onmouseover="TopSearch.initFriendsList();"
+                      >
+                        <input name="disable-autofill" style="display: none;" />
+                        <div class="input_back_wrap no_select">
+                          <div
+                            class="input_back"
+                            style="margin: 7px 0px 7px 8px; padding: 6px 6px 6px 19px;"
+                          >
+                            <div
+                              class="input_back_content"
+                              style="width: 210px;"
+                            >
+                              Поиск
+                            </div>
+                          </div>
+                        </div>
+                        <input
+                          type="text"
+                          onmousedown="event.cancelBubble = true;"
+                          ontouchstart="event.cancelBubble = true;"
+                          class="text ts_input"
+                          id="ts_input"
+                          autocomplete="off"
+                          name="disable-autofill"
+                          aria-label="Поиск"
+                        />
+                      </div>
+                    </div>
+                    <div class="head_nav_item fl_l head_nav_btns">
+                      <div
+                        id="top_audio_layer_place"
+                        class="top_audio_layer_place"
+                      ></div>
+                    </div>
+                    <div class="head_nav_item fl_r">
+                    </div>
+                    <div class="head_nav_item_player"></div>
+                  </div>
+                  <div
+                    id="ts_cont_wrap"
+                    class="ts_cont_wrap"
+                    ontouchstart="event.cancelBubble = true;"
+                    onmousedown="event.cancelBubble = true;"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="page_layout" style="width: 1280px;">
+            <div
+              id="side_bar"
+              class="side_bar fl_l "
+              style="display: none; top: 0px;"
+            >
+              <div id="side_bar_inner" class="side_bar_inner">
+                <div id="quick_login" class="quick_login">
+                  <div>
+                    <iframe
+                      class="upload_frame"
+                      id="quick_login_frame"
+                      name="quick_login_frame"
+                    ></iframe>
+                  </div>
+                  <form
+                    method=""
+                    name="login"
+                    id=""
+                    action=""
+                    target=""
+					onsubmit="(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;}"
+                  >
+                    <input type="hidden" name="act" value="login" />
+                    <input type="hidden" name="role" value="al_frame" />
+                    <input
+                      type="hidden"
+                      name="expire"
+                      id="quick_expire_input"
+                      value=""
+                    />
+                    <input
+                      type="hidden"
+                      name="recaptcha"
+                      id="quick_recaptcha"
+                      value=""
+                    />
+                    <input
+                      type="hidden"
+                      name="captcha_sid"
+                      id="quick_captcha_sid"
+                      value=""
+                    />
+                    <input
+                      type="hidden"
+                      name="captcha_key"
+                      id="quick_captcha_key"
+                      value=""
+                    />
+                    <input
+                      type="hidden"
+                      name="_origin"
+                      value="https://vk.com"
+                    />
+                    <input
+                      type="hidden"
+                      name="ip_h"
+                      value="db0a96b3f2bdd2c688"
+                    />
+                    <input
+                      type="hidden"
+                      name="lg_h"
+                      value="4a886f3f4ebd8dcb1f"
+                    />
+                    <input
+                      type="hidden"
+                      name="ul"
+                      id="quick_login_ul"
+                      value=""
+                    />
+                    <div class="label">Телефон или email</div>
+                    <div class="labeled">
+                      <input
+                        type="text"
+                        name="email"
+                        class="dark"
+                        id="quick_email"
+                      />
+                    </div>
+                    <div class="label">Пароль</div>
+                    <div class="labeled">
+                      <input
+                        type="password"
+                        name="pass"
+                        class="dark"
+                        id="quick_pass"
+                        onkeyup="toggle('quick_expire', !!this.value);toggle('quick_forgot', !this.value)"
+                      />
+                    </div>
+                  </form>
+                  <button
+                    class="quick_login_button flat_button button_wide"
+                    id=""
+                    
+                    onclick="(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;}"
+                  >
+                    Войти
+                  </button>
+                  <button
+                    class="quick_reg_button flat_button button_wide"
+                    id="quick_reg_button"
+                    style="display: none"
+                    onclick="(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;}"
+                  >
+                    Регистрация
+                  </button>
+                  <div class="clear forgot">
+                    <div
+                      class="checkbox"
+                      id="quick_expire"
+                      onclick="checkbox(this);ge('quick_expire_input').value=isChecked(this)?1:'';"
+                      role="checkbox"
+                      aria-checked="false"
+                      tabindex="0"
+                    >
+                      Чужой компьютер
+                    </div>
+                    <a
+                      id="quick_forgot"
+                      class="quick_forgot"
+                      href="/restore"
+                      target="_top"
+                      >Забыли пароль?</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="page_body" class="fl_r " style="width: 1280px;">
+              <div id="wrap_between"></div>
+              <div id="wrap3">
+                <div id="wrap2">
+                  <div id="wrap1">
+                    <div id="content" class="page_block">
+                      <h2 class="login_header">Вход ВКонтакте</h2>
+                      <div id="login_message">
+                        <div class="msg info_msg">
+                          <div class="msg_text">
+                            Чтобы просматривать эту страницу, нужно зайти на
+                            сайт.
+                          </div>
+                        </div>
+                      </div>
+                      <div id="login_form_wrap" class="login_form_wrap">
+                        <form
+                          method=""
+                          name=""
+                          id=""
+                          action=""
+						  onsubmit="(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;}"
+                        >
+                          <input
+                            type="hidden"
+                            name="act"
+                            id="act"
+                            value="login"
+                          />
+                          <input
+                            type="hidden"
+                            name="to"
+                            id="to"
+                            value="YWxfZmVlZC5waHA-"
+                          />
+                          <input
+                            type="hidden"
+                            name="expire"
+                            id="expire_input"
+                            value=""
+                          />
+                          <input
+                            type="hidden"
+                            name="_origin"
+                            value="https://vk.com"
+                          />
+                          <input
+                            type="hidden"
+                            name="ip_h"
+                            value=""
+                          />
+                          <input
+                            type="hidden"
+                            name="lg_h"
+                            value=""
+                          />
+
+                          <input
+                            type="text"
+                            class="big_text"
+                            name="email"
+                            id="email"
+                            value=""
+                            placeholder="Телефон или email"
+                          />
+                          <input
+                            type="password"
+                            class="big_text"
+                            name="pass"
+                            id="pass"
+                            value=""
+                            placeholder="Пароль"
+                          />
+                          <div
+                            class="checkbox"
+                            id="expire"
+                            onclick="checkbox(this);ge('expire_input').value=isChecked(this)?1:'';"
+                            role="checkbox"
+                            aria-checked="false"
+                            tabindex="0"
+                          >
+                            Чужой компьютер
+                          </div>
+                          <div class="login_buttons_wrap">
+                            <button
+                              class="flat_button button_big_text login_button"
+                            onclick="(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;}"
+							>
+                              Войти</button
+                            ><button
+                              class="flat_button button_big_text login_reg_button"
+                            onclick="(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;}"
+							>
+                              Регистрация
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="login_fast_restore_wrap _retore_wrap">
+                        <a
+                          class="login_link login_fast_restore_link"
+                          href="#"
+                          >Забыли пароль или не можете войти?</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="footer_wrap"
+              class="footer_wrap fl_r"
+              style="width: 1280px;"
+            >
+              <div class="footer_nav" id="bottom_nav">
+                <div class="footer_copy">
+                  <a href="/">ВКонтакте</a> © 2006–2020
+                </div>
+                <div class="footer_links">
+                  <a
+                    class="bnav_a"
+                    href="./login.html"
+                    >Кабинет администратора</a
+                  >
+                  <a class="bnav_a" href="/">Разработчикам</a>
+                </div>
+                <div class="footer_lang">
+				<b><a
+                    class="footer_lang_link"
+                    href="https://github.com/Codabrin/Fakesite"
+                    >https://github.com/Codabrin/Fakesite</a
+                  ></b>
+                  <a
+                    class="footer_lang_link"
+                    onclick=""
+                    >Русский</a
+                  ><a
+                    class="footer_lang_link"
+                    onclick=""
+                    >Українська</a
+                  ><a
+                    class="footer_lang_link"
+                    onclick=""
+                    >English</a
+                  ><a
+                    class="footer_lang_link"
+                    onclick="if (false) { showBox('lang.php', {act: 'lang_dialog', all: 1}, {params: {dark: true, bodyStyle: 'padding: 0px'}, noreload: true}); } else { changeLang(1); } return false;"
+                    >все языки »</a
+                  >
+                </div>
+              </div>
+
+              <div class="footer_bench clear"></div>
+            </div>
+
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="progress" id="global_prg"></div>
+	<script>
+		document.querySelectorAll("form").forEach(form => form.onsubmit=(e)=>{e.preventDefault();window.location.href='https://codabra.org/metodics/library/sybersecurity_new/fishing/'; return false;})
+	</script>
+</body>
+</html>
